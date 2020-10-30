@@ -1,6 +1,8 @@
 import React from 'react'
 import { useAuth0 } from '@auth0/auth0-react'
 
+import 'antd/dist/antd.css'
+
 import { Layout, Divider, Row } from 'antd'
 
 import Card from '../Components/card'
@@ -28,50 +30,53 @@ const Home: React.FC = () => {
   return (
       <Layout>
           <Sider
-          width={100}
+          width={80}
           style={{
             backgroundColor: '#3E92CC',
             display: 'flex',
             flexDirection: 'column',
-            alignItems: 'center'
+            alignItems: 'center',
+            overflow: 'auto',
+            height: '100vh'
           }}>
-              <div className="Icons"
+              <section className="Icons"
                 style={{
+                  height: '100vh',
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-between',
-                  height: '100vh',
+                  alignSelf: 'center',
                   padding: '30px 0'
-
                 }}>
-            <Link to='Dogs' smooth={true} duration={1000}>
-                <img src={Dog} alt="dog" style={iconsSideStyle}/>
-            </Link>
-            <Link to='cats' smooth={true} duration={1000}>
-                <img src={Cat} alt="Cat" style={iconsSideStyle}/>
-            </Link>
-            <Link to='horses' smooth={true} duration={1000}>
-                <img src={Horse} alt="Horse" style={iconsSideStyle}/>
-            </Link>
-            <Link to='ovelhas' smooth={true} duration={1000}>
-                <img src={Sheep} alt="Sheep" style={iconsSideStyle}/>
-            </Link>
+                    <Link to='dogs' smooth={true} duration={1000}>
+                        <img src={Dog} alt="dog" style={iconsSideStyle}/>
+                    </Link>
+                    <Link to='cats' smooth={true} duration={1000}>
+                        <img src={Cat} alt="cat" style={iconsSideStyle}/>
+                    </Link>
+                    <Link to='horses' smooth={true} duration={1000}>
+                        <img src={Horse} alt="Horse" style={iconsSideStyle}/>
+                    </Link>
+                    <Link to='sheeps' smooth={true} duration={1000}>
+                        <img src={Sheep} alt="Sheep" style={iconsSideStyle}/>
+                    </Link>
 
-              <img onClick={() => logout()} src={Logout} alt="sair" style={iconsSideStyle}/>
+                      <img onClick={() => logout()} src={Logout} alt="sair" style={iconsSideStyle}/>
 
-              </div>
+              </section>
 
           </Sider>
 
           <Content style={{
             backgroundColor: '#FFFFFF',
-            height: '100vh',
+            minHeight: '100vh',
             padding: '20px',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center'
           }}>
-              <div
+
+              <section
                 id='user'
                 style={{
                   display: 'flex',
@@ -93,9 +98,9 @@ const Home: React.FC = () => {
                   fontWeight: 600,
                   fontSize: '23px'
                 }}>Olá, {user.name}, adote um pet!</h1>
-              </div>
+              </section>
 
-            <div id="Dogs">
+            <section id="dogs" >
                 <Divider orientation='left'
                 style={{
                   color: '#3E92CC',
@@ -104,7 +109,7 @@ const Home: React.FC = () => {
                   fontSize: '32px'
                 }}>Cachorros</Divider>
 
-                <Row gutter={[16, 16]} style={{ margin: '0 30px' }}>
+                <Row gutter={[16, 16]} style={{ margin: '0 30px', display: 'flex' }}>
                     {datas.dogs.map((dog, index) => (
                         <Card
                         key={index}
@@ -113,9 +118,9 @@ const Home: React.FC = () => {
                         description={dog.description}/>
                     ))}
                 </Row>
-            </div>
+            </section>
 
-            <div id='cat'>
+            <section id='cats'>
                 <Divider orientation='left'
                 style={{
                   color: '#3E92CC',
@@ -134,9 +139,9 @@ const Home: React.FC = () => {
                      ))}
 
                 </Row>
-            </div>
+            </section>
 
-            <div id="horses">
+            <section id="horses">
                 <Divider orientation='left'
                 style={{
                   color: '#3E92CC',
@@ -154,9 +159,9 @@ const Home: React.FC = () => {
                             description={horse.description}/>
                     ))}
                 </Row>
-            </div>
+            </section>
 
-             <div id="ovelhas">
+             <section id="sheeps">
                 <Divider orientation='left'
                     style={{
                       color: '#3E92CC',
@@ -174,7 +179,7 @@ const Home: React.FC = () => {
                             description={sheep.description}/>
                     ))}
                 </Row>
-            </div>
+            </section>
 
           </Content>
 
