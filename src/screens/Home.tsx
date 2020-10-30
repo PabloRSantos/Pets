@@ -101,9 +101,11 @@ const Home: React.FC = () => {
                   color: '#8A898B',
                   textAlign: 'center',
                   fontFamily: 'Poppins',
-                  fontWeight: 600,
+                  marginTop: '5px',
+                  fontWeight: 500,
                   fontSize: '23px'
                 }}>Olá, {user.name}, adote um pet!</h1>
+
               </section>
 
             <section id="dogs" >
@@ -136,6 +138,7 @@ const Home: React.FC = () => {
                 }}>Gatos</Divider>
 
                 <Row gutter={[16, 16]} style={{ margin: '0 30px' }}>
+
                      {datas.cats.map((cat, index) => (
                         <Card
                         key={index}
