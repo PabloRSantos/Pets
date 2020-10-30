@@ -40,7 +40,7 @@ const Login: React.FC = () => {
             fontWeight: 700,
             fontSize: '52px'
           }}>
-              Login</h1>
+              Pets</h1>
 
           <span style={{
             color: '#8A898B',
@@ -57,7 +57,7 @@ const Login: React.FC = () => {
               type="primary"
               style={{
                 backgroundColor: '#81D197',
-                width: '100%',
+                width: '60%',
                 height: '60px',
                 borderRadius: '8px',
                 border: 'none',
