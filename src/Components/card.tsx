@@ -16,7 +16,6 @@ const CardComponent: React.FC<CardProps> = ({ img, title, description }) => {
     <Col span={6}>
     <Card
             hoverable
-            style={{ width: 240 }}
             cover={<img src={img} />}
         >
             <Meta title={title} description={description} />
