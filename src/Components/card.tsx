@@ -13,13 +13,13 @@ interface CardProps {
 
 const CardComponent: React.FC<CardProps> = ({ img, title, description }) => {
   return (
-    <Col span={6}>
+    <Col xl={6} xs={24}>
     <Card
             hoverable
             cover={<img src={img} />}
         >
             <Meta title={title} description={description} />
-        </Card>,
+        </Card>
     </Col>
   )
 }

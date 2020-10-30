@@ -22,7 +22,7 @@ const Home: React.FC = () => {
   const { logout, user } = useAuth0()
 
   const iconsSideStyle = {
-    margin: '10px 0',
+    margin: '15px 0',
     width: '50px',
     cursor: 'pointer'
   }
@@ -37,6 +37,9 @@ const Home: React.FC = () => {
             flexDirection: 'column',
             alignItems: 'center',
             overflow: 'auto',
+            position: 'sticky',
+            top: '0',
+            left: '0',
             height: '100vh'
           }}>
               <section className="Icons"
@@ -46,17 +49,20 @@ const Home: React.FC = () => {
                   flexDirection: 'column',
                   justifyContent: 'space-between',
                   alignSelf: 'center',
-                  padding: '30px 0'
+                  padding: '10vh 0'
                 }}>
                     <Link to='dogs' smooth={true} duration={1000}>
                         <img src={Dog} alt="dog" style={iconsSideStyle}/>
                     </Link>
+
                     <Link to='cats' smooth={true} duration={1000}>
                         <img src={Cat} alt="cat" style={iconsSideStyle}/>
                     </Link>
+
                     <Link to='horses' smooth={true} duration={1000}>
                         <img src={Horse} alt="Horse" style={iconsSideStyle}/>
                     </Link>
+
                     <Link to='sheeps' smooth={true} duration={1000}>
                         <img src={Sheep} alt="Sheep" style={iconsSideStyle}/>
                     </Link>
@@ -70,7 +76,7 @@ const Home: React.FC = () => {
           <Content style={{
             backgroundColor: '#FFFFFF',
             minHeight: '100vh',
-            padding: '20px',
+            padding: '15px 5%',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center'
