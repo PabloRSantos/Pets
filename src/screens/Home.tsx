@@ -1,4 +1,5 @@
 import React from 'react'
+import { useAuth0 } from '@auth0/auth0-react'
 
 import { Layout, Divider, Row } from 'antd'
 
@@ -11,12 +12,17 @@ import Sheep from '../assets/sheep.svg'
 import Logout from '../assets/logout.svg'
 import { Link } from 'react-scroll'
 
+import datas from '../fakeDatas'
+
 const { Sider, Content } = Layout
 
 const Home: React.FC = () => {
+  const { logout, user } = useAuth0()
+
   const iconsSideStyle = {
     margin: '10px 0',
-    width: '50px'
+    width: '50px',
+    cursor: 'pointer'
   }
 
   return (
@@ -51,7 +57,7 @@ const Home: React.FC = () => {
                 <img src={Sheep} alt="Sheep" style={iconsSideStyle}/>
             </Link>
 
-                <img src={Logout} alt="sair" style={iconsSideStyle}/>
+              <img onClick={() => logout()} src={Logout} alt="sair" style={iconsSideStyle}/>
 
               </div>
 
@@ -59,8 +65,36 @@ const Home: React.FC = () => {
 
           <Content style={{
             backgroundColor: '#FFFFFF',
-            height: '100vh'
+            height: '100vh',
+            padding: '20px',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center'
           }}>
+              <div
+                id='user'
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center'
+                }}>
+
+                <img src={user.picture}
+                    alt={user.name}
+                    style={{
+                      borderRadius: '50%',
+                      width: '75px'
+                    }}/>
+
+                <h1 style={{
+                  color: '#8A898B',
+                  textAlign: 'center',
+                  fontFamily: 'Poppins',
+                  fontWeight: 600,
+                  fontSize: '23px'
+                }}>Olá, {user.name}, adote um pet!</h1>
+              </div>
+
             <div id="Dogs">
                 <Divider orientation='left'
                 style={{
@@ -69,26 +103,15 @@ const Home: React.FC = () => {
                   fontWeight: 700,
                   fontSize: '32px'
                 }}>Cachorros</Divider>
+
                 <Row gutter={[16, 16]} style={{ margin: '0 30px' }}>
-                    <Card
-                        img='https://images.unsplash.com/photo-1561037404-61cd46aa615b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80'
-                        title='Max'
-                        description='Cachorro com 1 ano'/>
-
-                    <Card
-                        img='https://images.unsplash.com/photo-1561037404-61cd46aa615b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80'
-                        title='Max'
-                        description='Cachorro com 1 ano'/>
-
-                    <Card
-                        img='https://images.unsplash.com/photo-1561037404-61cd46aa615b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80'
-                        title='Max'
-                        description='Cachorro com 1 ano'/>
-
-                    <Card
-                        img='https://images.unsplash.com/photo-1561037404-61cd46aa615b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80'
-                        title='Max'
-                        description='Cachorro com 1 ano'/>
+                    {datas.dogs.map((dog, index) => (
+                        <Card
+                        key={index}
+                        img={dog.img}
+                        title={dog.name}
+                        description={dog.description}/>
+                    ))}
                 </Row>
             </div>
 
@@ -102,25 +125,14 @@ const Home: React.FC = () => {
                 }}>Gatos</Divider>
 
                 <Row gutter={[16, 16]} style={{ margin: '0 30px' }}>
-                    <Card
-                        img='https://images.unsplash.com/photo-1494256997604-768d1f608cac?ixlib=rb-1.2.1&auto=format&fit=crop&w=1401&q=80'
-                        title='Max'
-                        description='Cachorro com 1 ano'/>
+                     {datas.cats.map((cat, index) => (
+                        <Card
+                        key={index}
+                        img={cat.img}
+                        title={cat.name}
+                        description={cat.description}/>
+                     ))}
 
-                    <Card
-                        img='https://images.unsplash.com/photo-1494256997604-768d1f608cac?ixlib=rb-1.2.1&auto=format&fit=crop&w=1401&q=80'
-                        title='Max'
-                        description='Cachorro com 1 ano'/>
-
-                    <Card
-                        img='https://images.unsplash.com/photo-1494256997604-768d1f608cac?ixlib=rb-1.2.1&auto=format&fit=crop&w=1401&q=80'
-                        title='Max'
-                        description='Cachorro com 1 ano'/>
-
-                    <Card
-                        img='https://images.unsplash.com/photo-1494256997604-768d1f608cac?ixlib=rb-1.2.1&auto=format&fit=crop&w=1401&q=80'
-                        title='Max'
-                        description='Cachorro com 1 ano'/>
                 </Row>
             </div>
 
@@ -134,25 +146,13 @@ const Home: React.FC = () => {
                 }}>Cavalos</Divider>
 
                 <Row gutter={[16, 16]} style={{ margin: '0 30px' }}>
-                    <Card
-                        img='https://images.unsplash.com/flagged/photo-1557296126-ae91316e5746?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80'
-                        title='Max'
-                        description='Cachorro com 1 ano'/>
-
-                    <Card
-                        img='https://images.unsplash.com/flagged/photo-1557296126-ae91316e5746?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80'
-                        title='Max'
-                        description='Cachorro com 1 ano'/>
-
-                    <Card
-                        img='https://images.unsplash.com/flagged/photo-1557296126-ae91316e5746?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80'
-                        title='Max'
-                        description='Cachorro com 1 ano'/>
-
-                    <Card
-                        img='https://images.unsplash.com/flagged/photo-1557296126-ae91316e5746?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80'
-                        title='Max'
-                        description='Cachorro com 1 ano'/>
+                    {datas.horses.map((horse, index) => (
+                            <Card
+                            key={index}
+                            img={horse.img}
+                            title={horse.name}
+                            description={horse.description}/>
+                    ))}
                 </Row>
             </div>
 
@@ -166,25 +166,13 @@ const Home: React.FC = () => {
                     }}>Ovelhas</Divider>
 
                 <Row gutter={[16, 16]} style={{ margin: '0 30px' }}>
-                    <Card
-                        img='https://images.unsplash.com/photo-1484557985045-edf25e08da73?ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80'
-                        title='Max'
-                        description='Cachorro com 1 ano'/>
-
-                    <Card
-                        img='https://images.unsplash.com/photo-1484557985045-edf25e08da73?ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80'
-                        title='Max'
-                        description='Cachorro com 1 ano'/>
-
-                    <Card
-                        img='https://images.unsplash.com/photo-1484557985045-edf25e08da73?ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80'
-                        title='Max'
-                        description='Cachorro com 1 ano'/>
-
-                    <Card
-                        img='https://images.unsplash.com/photo-1484557985045-edf25e08da73?ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80'
-                        title='Max'
-                        description='Cachorro com 1 ano'/>
+                    {datas.sheeps.map((sheep, index) => (
+                            <Card
+                            key={index}
+                            img={sheep.img}
+                            title={sheep.name}
+                            description={sheep.description}/>
+                    ))}
                 </Row>
             </div>
 

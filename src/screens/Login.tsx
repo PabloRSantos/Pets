@@ -1,29 +1,20 @@
 import React from 'react'
+import { useAuth0 } from '@auth0/auth0-react'
 
 import { Layout, Button } from 'antd'
 import 'antd/dist/antd.css'
 
-import Logo from '../assets/pata.svg'
-
-const { Header, Content } = Layout
+const { Content } = Layout
 
 const Login: React.FC = () => {
+  const { loginWithRedirect } = useAuth0()
+
   return (
    <Layout style={{
      backgroundColor: '#3E92CC',
      height: '100vh',
      width: '100vw'
    }}>
-
-     <Header style={{
-       backgroundColor: '#FFFFFF',
-       height: '70px',
-       display: 'flex',
-       justifyContent: 'center',
-       alignItems: 'center'
-     }}>
-         <img src={Logo} alt=""/>
-     </Header>
 
      <Content style={{
        display: 'flex',
@@ -61,17 +52,19 @@ const Login: React.FC = () => {
           }}>
           Faça login para procurar pets!</span>
 
-            <Button type="primary" htmlType="submit"
-            style={{
-              backgroundColor: '#81D197',
-              width: '100%',
-              height: '60px',
-              borderRadius: '8px',
-              border: 'none',
-              fontFamily: 'Poppins',
-              fontWeight: 700,
-              fontSize: '18px'
-            }}>
+            <Button
+              onClick={() => loginWithRedirect()}
+              type="primary"
+              style={{
+                backgroundColor: '#81D197',
+                width: '100%',
+                height: '60px',
+                borderRadius: '8px',
+                border: 'none',
+                fontFamily: 'Poppins',
+                fontWeight: 700,
+                fontSize: '18px'
+              }}>
                 Entrar
               </Button>
 
