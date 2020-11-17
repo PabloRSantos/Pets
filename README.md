@@ -1,46 +1,98 @@
-# Getting Started with Create React App
+<h1 align="center" style="color:#3E92CC">
+  Pets
+</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
 
-## Available Scripts
+   <a href="https://www.linkedin.com/in/pablo-rosa-68136a1b2/">
+      <img alt="Pablo Rosa" src="https://img.shields.io/badge/-Pablo Rosa-3E92CC?style=flat&logo=Linkedin&logoColor=white" />
+   </a>
+  <img alt="Repository size" src="https://img.shields.io/github/languages/code-size/PabloRSantos/Pets?color=3E92CC&label=repo%20size">
 
-In the project directory, you can run:
+  <a href="https://github.com/PabloRSantos/Pets/commits/master">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/PabloRSantos/Pets?color=3E92CC">
+  </a>
 
-### `npm start`
+</p>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<div align="center">
+  <sub>Projeto feito para a adoção de pets. Feito com ❤︎ por
+    <a href="https://github.com/PabloRSantos">Pablo Rosa</a>
+  </sub>
+</div>
 
-### `npm test`
+# :pushpin: Índice
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [Sobre](#sobre)
+- [Tecnologias Utilizadas](#tecnologias-utilizadas)
+- [Como Usar](#como-usar)
+- [Como Contribuir](#como-contribuir)
 
-### `npm run build`
+<a id="sobre"></a>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## :bookmark: Sobre
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+O <strong>Pets</strong> é uma aplicação Web para seus usuários adotarem diversos animais.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<a id="tecnologias-utilizadas"></a>
 
-### `npm run eject`
+## :rocket: Tecnologias Utilizadas
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+O projeto foi desenvolvido utilizando as seguintes tecnologias
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- [TypeScript](https://www.typescriptlang.org/)
+- [React](https://pt-br.reactjs.org/)
+- [AntDesign](https://ant.design/)
+- [Auth0](https://auth0.com/)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Projeto Web
+<div>
+   <img src="./.github/Login.jpg" width="380">
+   <img src="./.github/Auth0.jpg" width="380">
+   <img src="./.github/Home.jpg" width="380">
+</div>
 
-## Learn More
+<a id="como-usar"></a>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# :construction_worker: Como usar
+  ### **Pré-requisitos**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+  - É **necessário** possuir o **[Node.js](https://nodejs.org/en/)** instalado na máquina
+  - Também, é **preciso** ter um gerenciador de pacotes seja o **[NPM](https://www.npmjs.com/)** ou **[Yarn](https://yarnpkg.com/)**.
+
+```bash
+# Clone o repositório
+$ git clone https://github.com/PabloRSantos/Pets.git
+```
+
+### Executando projeto Web
+
+
+```bash
+# Entre na pasta 
+$ cd Pets
+
+# Instale as depêndencias
+$ npm install
+
+# Inicie a aplicação
+$ npm start
+
+```
+
+<a id="como-contribuir"></a>
+
+## :tada: Como contribuir
+
+- Faça um Fork desse repositório
+- Crie uma branch com a sua feature: `git checkout -b my-feature`
+- Commit suas mudanças: `git commit -m 'feat: My new feature'`
+- Push a sua branch: `git push origin my-feature`
+
+---
+
+<h4 align="center">
+    Feito com 💜 by <a href="https://www.linkedin.com/in/pablo-rosa-68136a1b2/" target="_blank">Pablo Rosa</a>
+</h4>
